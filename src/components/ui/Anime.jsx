@@ -1,4 +1,3 @@
-// src/features/AnimeList.js
 import React, { useState, useEffect } from 'react';
 import { useGetTopAnimeQuery, useSearchAnimeQuery } from '../../features/api/apiSlice';
 
