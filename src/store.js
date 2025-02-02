@@ -1,4 +1,3 @@
-// src/app/store.js
 import { configureStore } from '@reduxjs/toolkit'; // 1. Import the function to set up our store.
 import { animeApi } from './features/api/apiSlice'; // 2. Import our API slice for fetching anime data.
 

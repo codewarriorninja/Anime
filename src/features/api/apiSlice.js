@@ -1,4 +1,3 @@
-// src/features/api/apiSlice.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'; // 1. Import functions to create an API slice.
 
 export const animeApi = createApi({
