@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // 1. Import Link for navigation.
 import { useGetTopAnimeQuery, useSearchAnimeQuery } from '../../features/api/apiSlice';
-
 
 const AnimeList = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -78,8 +78,9 @@ const AnimeList = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {animeList.map((anime) => (
-            <div
-              key={anime.mal_id}
+            <Link
+              key={anime.mal_id} // 2. Use `mal_id` for each anime to create unique link URLs.
+              to={`/anime/${anime.mal_id}`} // 3. Link to the DetailPage with anime ID in URL.
               className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-200"
             >
               <img
@@ -91,7 +92,7 @@ const AnimeList = () => {
                 <h2 className="text-lg font-semibold mb-2 dark:text-white">{anime.title}</h2>
                 <p className="text-gray-700 dark:text-gray-300">Score: {anime.score}</p>
               </div>
-            </div>
+            </Link> // 4. Wrap each anime item in a Link component.
           ))}
         </div>
       )}
